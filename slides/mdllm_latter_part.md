@@ -56,6 +56,7 @@ Where:
 ## 
 
 ---
+
 ## Table 1: Main Results on Language Modeling Benchmarks
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 860px; margin: 0 auto;">
@@ -136,6 +137,7 @@ Where:
 </div>
 
 ---
+
 ## Table 2
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
@@ -161,6 +163,193 @@ Where:
       <tr>
         <td style="border-bottom: 2px solid #000;">MDLM (Ours)</td>
         <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">&le;23.21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Table 3
+
+<div style="font-size: 26px; line-height: 1.35; max-width: 1080px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 3: Zero-shot perplexities (PPL; &darr;) of models trained for 524B tokens on OWT. All perplexities for diffusion models are upper bounds.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+    <thead>
+      <tr>
+        <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PTB</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Wikitext</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">LM1B</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Lambada</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">AG News</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Pubmed</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Arxiv</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-style: italic; border-bottom: 1px solid #000;">AR (Retrained)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">82.05</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">25.75</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">51.25</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">51.28</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">52.09</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">49.01</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">41.73</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 1px solid #000;">SEDD (Retrained)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">100.09</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">34.28</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">68.20</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">49.86</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">62.09</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">44.53</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">38.48</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 2px solid #000;">MDLM (Ours)</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">95.26</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">32.83</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">67.01</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">47.52</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">61.15</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">41.89</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">37.37</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Table 4
+
+<div style="font-size: 26px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 4: GLUE evaluation results. Evaluation measures (&uarr;) are F1 score for QQP and MRPC, Spearman correlations for STS-B, and accuracy for the rest. For MNLI, we report match/mismatch accuracies.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+    <thead>
+      <tr>
+        <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">MNLI<br>(m/mm)</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">QQP</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">QNLI</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">SST-2</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">COLA</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">STS-B</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">MRPC</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">RTE</th>
+        <th style="text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Avg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">AR</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">80.94/80.78</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">86.98</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">86.16</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">90.14</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">33.43</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">84.32</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">83.88</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">47.29</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">74.88</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">BERT</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">84.43/85.35</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">88.41</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">90.46</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">92.20</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">54.81</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">88.41</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">89.16</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">61.37</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">81.62</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 2px solid #000;">+MDLM-FT</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">84.76/85.07</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">88.49</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">90.30</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">92.20</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">57.69</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">87.48</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">90.53</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">62.09</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">82.06</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Table 5
+
+<div style="font-size: 28px; line-height: 1.35; max-width: 760px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 5: Semi-AR generative perplexity (Gen. PPL; &darr;) for sequences of 2048 tokens.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 24px;">
+    <thead>
+      <tr>
+        <th style="width: 35%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="width: 32.5%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Gen. PPL (&darr;)</th>
+        <th style="width: 32.5%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Sec/Seq (&darr;)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">SSD-LM</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">35.43</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">2473.9</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 2px solid #000;">MDLM (Ours)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">27.18</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">89.3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Table 8
+
+<div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 8: Test perplexities (PPL; &darr;) for MDLM ablations on LM1B. For the discrete-time models, we use $T = 1000$. Standard deviation is measured over 5 seeds during evaluation.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 24px;">
+    <thead>
+      <tr>
+        <th style="width: 60%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="width: 40%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&le;)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight: bold; border-bottom: 1px solid #000;">MDLM <span style="color: #d55e00;">(47)</span></td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">27.04 &plusmn; .01</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 1px solid #000;">w/o continuous time <span style="color: #d55e00;">(43)</span></td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">27.19 &plusmn; .07</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 1px solid #000;">&amp; w/o carry-over <span style="color: #d55e00;">(41)</span></td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">28.56 &plusmn; .15</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 2px solid #000;">&amp; w/o zero masking <span style="color: #d55e00;">(39)</span></td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">28.51 &plusmn; .15</td>
       </tr>
     </tbody>
   </table>
