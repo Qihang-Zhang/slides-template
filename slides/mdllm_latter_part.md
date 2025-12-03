@@ -148,41 +148,48 @@ Where:
   </div>
 </div>
 
+**Takehome Message:** MDLM beats SEDD (previous SOTA in diffusion LM). 
+
 ---
 
 ## Language Modeling Results: `OWT` (in dist.)
 
-<div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
-  <div style="margin: 0 0 12px 0;">
-    Table 2: Test perplexities (PPL; &darr;) on OWT for models trained for 262B tokens. &dagger; denotes retrained models.
+<div style="display: flex; gap: 24px; align-items: flex-start; font-size: 26px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
+  <div style="flex: 0 0 62%; max-width: 620px;">
+    <div style="margin: 0 0 12px 0;">
+      Table 2: Test perplexities (PPL; &darr;) on OWT for models trained for 262B tokens. &dagger; denotes retrained models.
+    </div>
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 48px;">
+      <thead>
+        <tr>
+          <th style="width: 55%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+          <th style="width: 45%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&darr;)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border-bottom: 1px solid #000;">AR&dagger;</td>
+          <td style="text-align: center; border-bottom: 1px solid #000;">17.54</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #000;">SEDD&dagger;</td>
+          <td style="text-align: center; border-bottom: 1px solid #000;">&le;24.10</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 2px solid #000;">MDLM (Ours)</td>
+          <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;"><strong>&le;23.21</strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 48px;">
-    <thead>
-      <tr>
-        <th style="width: 55%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
-        <th style="width: 45%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&darr;)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border-bottom: 1px solid #000;">AR&dagger;</td>
-        <td style="text-align: center; border-bottom: 1px solid #000;">17.54</td>
-      </tr>
-      <tr>
-        <td style="border-bottom: 1px solid #000;">SEDD&dagger;</td>
-        <td style="text-align: center; border-bottom: 1px solid #000;">&le;24.10</td>
-      </tr>
-      <tr>
-        <td style="border-bottom: 2px solid #000;">MDLM (Ours)</td>
-        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;"><strong>&le;23.21</strong></td>
-      </tr>
-    </tbody>
-  </table>
+  <div style="flex: 1; font-size: 36px; line-height: 1.45;">
+    <div style="font-size: 36px; margin: 0 0 10px 0;">OWT Dataset:</div>
+    <ul style="margin: 0; padding-left: 18px;">
+      <li><strong>Full name:</strong> OpenWebText Corpus</li>
+      <li><strong>Description:</strong> Internal dataset used to train GPT-2.</li>
+    </ul>
+  </div>
 </div>
-
-`OWT` Dataset
-+ **Full name:** OpenWebText Corpus
-+ **Description:** Internal dataset used to train GPT-2.
 
 ---
 
@@ -241,11 +248,11 @@ Where:
 </div>
 
 Datasets:
+
 + **PTB:** Related to Wall Street Journal
 + **Lambada:** Designed to test the capabilities of computational models for text understanding by measuring their ability to predict the last word of a given passage.
 + **AG news:** A collection of more than 1 million news articles from more than 2000 news sources.
 + **PubMed:** A dataset consisting of citations and abstracts from biomedical literature.
-
 ---
 
 ## Table 4
