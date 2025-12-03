@@ -243,7 +243,7 @@ The discrete diffusion loss is $\mathbb{E}_q [ D\_{KL}(q(z_s|z_t, x) || p_\theta
     *   $D_{KL} = 0$. (Loss is zero).
 
 2.  **Case 2: $z_t = m$ (Masked)**
-    *   Simplifies to a standard Cross Entropy term scaled by diffusion noise schedule:
+    *   Simplifies to a standard Cross Entropy term scaled by diffusion schedule:
     $$ \text{Loss} \propto - \log p_\theta(x | z_t \text{ is masked}) $$
 
 ---
@@ -259,16 +259,15 @@ $$ \mathcal{L}\_{\text{NELBO}}^\infty = \mathbb{E}\_{q} \int_{0}^{1} \frac{\alph
     *   $\log \langle \dots \rangle$: Standard Cross Entropy .
     
 ---
-
 ## 6. Masked Diffusion Language Models
 
 Next, the authors apply masked diffusion to language modeling over sequences $\mathbf{x}^{1:L}$ of $L$ tokens. The forward noising process is applied independently accross a sequence, and $p_\theta({\mathbf{z}_s^{1:L}\mid \mathbf{z}_t^{1:L}})=\Pi\_{l=1}^{L} p_\theta(\mathbf{z}^l_s\mid  \mathbf{z}_t^{1:L})$.
 
 $$ \mathcal{L}\_{\text{NELBO}}^\infty = \mathbb{E}\_{q} \int_{0}^{1} \frac{\alpha'\_t}{1-\alpha_t} \sum_{\ell=1}^{L} \log \langle x_\theta^\ell(z_t^{1:L}, t), x^\ell \rangle dt $$
 
-* **Note**: Although the loss imposes a loss on all tokens, **unmasked tokens don’t contribute to the loss**, as they are copied over by the denoising network due to “carry-over unmasking”.
+* **Note**: Although the loss imposes a loss on all tokens, **unmasked tokens don’t contribute to the loss**, as they are copied over due to “carry-over unmasking”.
     
-**Conclusion:** MDLM training is simply **Weighted Masked Language Modeling**. It establishes a connection between generative diffusion models and **encoder-only BERT models**.
+**Conclusion:** MDLM training is **weighted Masked Language Modeling**. It establishes a connection between diffusion models and **encoder-only BERT models**.
 
 ---
 
