@@ -137,3 +137,31 @@ Where:
 
 ---
 ## Table 2
+
+<div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 2: Test perplexities (PPL; &darr;) on OWT for models trained for 262B tokens. &dagger; denotes retrained models.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 24px;">
+    <thead>
+      <tr>
+        <th style="width: 55%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="width: 45%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&darr;)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">AR&dagger;</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">17.54</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">SEDD&dagger;</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">&le;24.10</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 2px solid #000;">MDLM (Ours)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">&le;23.21</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
