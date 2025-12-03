@@ -1,6 +1,6 @@
 ---
-customTheme: https://comping-style.qihang-zhang.com/stylesheets/slides.css
 title: "Masked Diffusion Language Models Latter Part"
+customTheme: "https://comping-style.qihang-zhang.com/stylesheets/slides.css"
 ---
 
 # Masked Diffusion Language Models
@@ -23,13 +23,23 @@ title: "Masked Diffusion Language Models Latter Part"
 
 ## Today's Agenda
 
-1. Background & Motivation
-2. Problem Statement
-3. Masked Diffusion Framework
-4. Model Architecture
-5. Training Procedure
-6. Experimental Results
-7. Key Findings & Conclusions
+1. Sampling/Inference Process
+2. Experimental Results
+3. Key Findings & Conclusions
 
 ---
+
+## Sampling / Inference Process
+
+---
+
+## Experimental Setting: PPL
+
+Perplexity evaluates how well the model predicts the reference tokens:
+
+$$
+\mathrm{PPL} = \exp \left(\mathbb{E} - \frac{1}{N} \sum_{i=1}^{N} \log P(x_i \mid x_{<i})\right)
+$$
+
+Lower PPL means the model assigns higher probability to the observed sequence (better predictive quality).
 
