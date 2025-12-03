@@ -78,61 +78,61 @@ Where:
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td style="font-style: italic;" rowspan="2">Autoregressive</td>
           <td>Transformer-X Base [13]</td>
           <td style="text-align: center;">0.46B</td>
           <td style="text-align: center;">23.5</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td style="border-bottom: 1px solid #000;">OmniNet<sub>T</sub> [61]</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">100M</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">21.5</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td style="font-style: italic; border-top: 1px solid #000;" rowspan="5">Diffusion</td>
           <td style="border-top: 1px solid #000;">BERT-Mouth [64]&dagger;</td>
           <td style="text-align: center; border-top: 1px solid #000;">110M</td>
           <td style="text-align: center; border-top: 1px solid #000;">&le;142.89</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td>D3PM (absorb) [1]</td>
           <td style="text-align: center;">70M</td>
           <td style="text-align: center;">&le;76.90</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td>Diffusion-LM [30]&dagger;</td>
           <td style="text-align: center;">80M</td>
           <td style="text-align: center;">&le;118.62</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td>DiffusionBert [26]</td>
           <td style="text-align: center;">110M</td>
           <td style="text-align: center;">&le;63.78</td>
         </tr>
-        <tr>
+        <tr style="color: #0b63ce;">
           <td style="border-bottom: 1px solid #000;">SEDD [33] (33B tokens)</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">110M</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">&le; 32.79</td>
         </tr>
-        <tr>
+        <tr style="color: #d2202f;">
           <td style="font-style: italic; border-top: 1px solid #000;" rowspan="2">Autoregressive<br>(Retrained)</td>
           <td style="border-top: 1px solid #000;">Transformer (33B tokens)</td>
           <td style="text-align: center; border-top: 1px solid #000;">110M</td>
           <td style="text-align: center; border-top: 1px solid #000;">22.32</td>
         </tr>
-        <tr>
+        <tr style="color: #d2202f;">
           <td style="border-bottom: 1px solid #000;">Transformer (327B tokens)</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">110M</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">20.86</td>
         </tr>
-        <tr>
+        <tr style="color: #d2202f;">
           <td style="font-style: italic; border-top: 1px solid #000;" rowspan="2">Diffusion<br>(Ours)</td>
           <td style="border-top: 1px solid #000;">MDLM (33B tokens)</td>
           <td style="text-align: center; border-top: 1px solid #000;">110M</td>
           <td style="text-align: center; border-top: 1px solid #000;">&le;27.04</td>
         </tr>
-        <tr>
+        <tr style="color: #d2202f;">
           <td style="border-bottom: 1px solid #000;">MDLM (327B tokens)</td>
           <td style="text-align: center; border-bottom: 1px solid #000;">110M</td>
           <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">&le;23.00</td>
@@ -144,15 +144,13 @@ Where:
     <div style="font-size: 26px; margin: 0 0 12px 0;">Key takeaways</div>
     <ul style="margin: 0; padding-left: 18px; font-size: 24px; line-height: 1.45;">
       <li><strong>LM1B:</strong> <br> One Billion Word Benchmark for Measuring Progress in Statistical Language Modeling <br><br><strong>Origin:</strong> WMT 2011 English News Crawl<br><strong>Feature:</strong> Only short sentenses, and sentenses are shuffled.</li>
-      <li>Our MDLM at 327B tokens sets the best diffusion bound so far (&le;23.00), closing most of the gap to AR.</li>
-      <li>Scaling tokens helps both AR and diffusion; moving from 33B to 327B cuts PPL notably for each family.</li>
     </ul>
   </div>
 </div>
 
 ---
 
-## Table 2
+## Language Modeling Results: `OWT`
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
