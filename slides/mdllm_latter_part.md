@@ -61,7 +61,7 @@ Where:
 
 ---
 
-## I.D. Language Modeling Results: `LM1B`
+## Language Modeling Results: `LM1B`(in dist.)
 
 <div style="display: flex; gap: 28px; align-items: flex-start; font-size: 24px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
   <div style="flex: 0 0 62%;">
@@ -150,7 +150,7 @@ Where:
 
 ---
 
-## Language Modeling Results: `OWT`
+## Language Modeling Results: `OWT` (in dist.)
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
@@ -186,13 +186,13 @@ Where:
 
 ---
 
-## Table 3
+## Language Modeling Results (out of dist.)
 
 <div style="font-size: 26px; line-height: 1.35; max-width: 1080px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
     Table 3: Zero-shot perplexities (PPL; &darr;) of models trained for 524B tokens on OWT. All perplexities for diffusion models are upper bounds.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 32px;">
     <thead>
       <tr>
         <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
@@ -239,6 +239,12 @@ Where:
     </tbody>
   </table>
 </div>
+
+Datasets:
++ **PTB:** Related to Wall Street Journal
++ **Lambada:** Designed to test the capabilities of computational models for text understanding by measuring their ability to predict the last word of a given passage.
++ **AG news:** A collection of more than 1 million news articles from more than 2000 news sources.
++ **PubMed:** A dataset consisting of citations and abstracts from biomedical literature.
 
 ---
 
