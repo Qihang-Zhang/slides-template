@@ -321,6 +321,138 @@ Where:
 
 ---
 
+## Table 6
+
+<div style="font-size: 26px; line-height: 1.35; max-width: 780px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 6: Test perplexities (PPL; &darr;) of generative fine-tuning of the Caduceus MLM [50] on the HG38 reference genome. Best diffusion model values are bolded. Error bars indicate the difference between the maximum and minimum values across 5 random seeds used for fine-tuning.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+    <thead>
+      <tr>
+        <th style="width: 52%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
+        <th style="width: 22%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Params</th>
+        <th style="width: 26%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&darr;)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-style: italic;" rowspan="2">Autoregressive (Retrained)</td>
+        <td style="text-align: center;">465K</td>
+        <td style="text-align: center;">3.067 &plusmn; .010</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-bottom: 1px solid #000;">433K</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">3.153 &plusmn; .001</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic;" rowspan="2">Diffusion (Retrained)</td>
+        <td style="text-align: center;">507K</td>
+        <td style="text-align: center;">&le; 3.240 &plusmn; .005</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-bottom: 1px solid #000;">467K</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">&le; 3.216 &plusmn; .003</td>
+      </tr>
+      <tr>
+        <td style="font-style: italic; border-bottom: 2px solid #000;">Diffusion (Ours)</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">467K</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">&le; 3.199 &plusmn; .010</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Table 7
+
+<div style="font-size: 26px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
+  <div style="margin: 0 0 12px 0;">
+    Table 7: Genomic Benchmarks. Top-1 accuracy (&uarr;) across 5-fold cross-validation (CV) for a pre-trained AR Mamba and a pre-trained Caduceus model fine-tuned with different diffusion parameterizations. The best values per task are bolded and the second best are italicized. Error bars indicate the difference between the maximum and minimum values across 5 random seeds used for CV.
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 20px;">
+    <thead>
+      <tr>
+        <th style="width: 32%; border-top: 2px solid #000; border-bottom: 1px solid #000;">Model Fine-Tuning Objective<br>(Parameter Count)</th>
+        <th style="width: 13.6%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Mamba AR<br>(465K)</th>
+        <th style="width: 13.6%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Caduceus MLM<br>(467K)</th>
+        <th style="width: 13.6%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Caduceus Plaid<br>(507K)</th>
+        <th style="width: 13.6%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Caduceus SEDD<br>(467K)</th>
+        <th style="width: 13.6%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">Caduceus MDLM (ours)<br>(467K)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Mouse Enhancers</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.763 (&plusmn;0.008)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.810 (&plusmn;0.016)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.745 (&plusmn;0.079)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.784 (&plusmn;0.058)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.795 (&plusmn;0.029)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Coding vs. Intergenomic</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.897 (&plusmn;0.004)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.913 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.908 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.913 (&plusmn;0.005)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.913 (&plusmn;0.003)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Human vs. Worm</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.967 (&plusmn;0.002)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.970 (&plusmn;0.002)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.971 (&plusmn;0.001)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.970 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.970 (&plusmn;0.003)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Human Enhancers Cohn</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.734 (&plusmn;0.027)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.737 (&plusmn;0.011)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.743 (&plusmn;0.010)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.746 (&plusmn;0.015)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.743 (&plusmn;0.016)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Human Enhancer Ensembl</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.856 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.907 (&plusmn;0.000)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.885 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.905 (&plusmn;0.006)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.899 (&plusmn;0.004)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Human Regulatory</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.861 (&plusmn;0.008)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.874 (&plusmn;0.003)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.868 (&plusmn;0.010)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.828 (&plusmn;0.037)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.868 (&plusmn;0.004)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 1px solid #000;">Human OCR Ensembl</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.806 (&plusmn;0.005)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 1px solid #000;">0.821 (&plusmn;0.004)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.820 (&plusmn;0.004)</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">0.816 (&plusmn;0.008)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">0.823 (&plusmn;0.008)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom: 2px solid #000;">Human NonTATA Promoters</td>
+        <td style="text-align: center; border-bottom: 2px solid #000;">0.926 (&plusmn;0.008)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 2px solid #000;">0.935 (&plusmn;0.014)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 2px solid #000;">0.935 (&plusmn;0.007)</td>
+        <td style="text-align: center; font-style: italic; border-bottom: 2px solid #000;">0.935 (&plusmn;0.014)</td>
+        <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">0.940 (&plusmn;0.007)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
 ## Table 8
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
