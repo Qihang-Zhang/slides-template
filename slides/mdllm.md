@@ -37,6 +37,8 @@ style: |
 *   **Result:** New State-of-the-Art (SOTA) among diffusion models, approaching AR perplexity.
 
 ---
+<img src="assets/mdlm.png" alt="MDLM Diagram" style="width:100%; height:auto;">
+---
 
 ## **Continuous vs. Discrete Diffusion Models**
 
@@ -45,7 +47,7 @@ style: |
 | **Data Space** | <div style="background-color: #e8f4ff; padding: 10px; border-radius: 5px;">Continuous $x \in \mathbb{R}^d$</div> | <div style="background-color: #ffeaea; padding: 10px; border-radius: 5px;">Discrete tokens $x \in \mathcal{V}$ (one-hot)</div> |
 | **Noise Source** | <div style="background-color: #e8f4ff; padding: 10px; border-radius: 5px;">Gaussian noise $\epsilon \sim \mathcal{N}(0, I)$</div> | <div style="background-color: #ffeaea; padding: 10px; border-radius: 5px;">Masking state $m$ (`[MASK]`)</div> |
 | **Forward Process** | <div style="background-color: #e8f4ff; padding: 10px; border-radius: 5px;">Gradually add Gaussian noise until signal is destroyed.</div> | <div style="background-color: #ffeaea; padding: 10px; border-radius: 5px;">Gradually replace tokens with `[MASK]` (absorbing state).</div> |
-| **Reverse Process** | <div style="background-color: #e8f4ff; padding: 10px; border-radius: 5px;">Predict the **mean** or **noise** to denoise steps.</div> | <div style="background-color: #ffeaea; padding: 10px; border-radius: 5px;">Predict **original tokens** $x_0$ to "unmask".</div> |
+| **Reverse Process** | <div style="background-color: #e8f4ff; padding: 10px; border-radius: 5px;">Predict the **noise** to denoise steps.</div> | <div style="background-color: #ffeaea; padding: 10px; border-radius: 5px;">Predict **original tokens** $x_0$ to "unmask".</div> |
 
 
 ---
