@@ -199,7 +199,7 @@ Where:
   <div style="margin: 0 0 12px 0;">
     Table 3: Zero-shot perplexities (PPL; &darr;) of models trained for 524B tokens on OWT. All perplexities for diffusion models are upper bounds.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 32px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 28px;">
     <thead>
       <tr>
         <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
@@ -247,12 +247,12 @@ Where:
   </table>
 </div>
 
-Datasets:
++ **PTB:** Related to Wall Street Journal; **Lambada:** English novels in BookCorpus.
++ **PubMed:** Citations and abstracts from biomedical literature.
 
-+ **PTB:** Related to Wall Street Journal
-+ **Lambada:** Designed to test the capabilities of computational models for text understanding by measuring their ability to predict the last word of a given passage.
-+ **AG news:** A collection of more than 1 million news articles from more than 2000 news sources.
-+ **PubMed:** A dataset consisting of citations and abstracts from biomedical literature.
+**Takehome Message:** 
+MDLM outperforms SEDD on all datasets mentioned
+Comparing with AR models; MDLM seems  better on generalization.
 ---
 
 ## Table 4
