@@ -62,7 +62,7 @@ Where:
   <div style="margin: 0 0 12px 0;">
     Table 1: Test perplexities (PPL; &darr;) on LM1B. &dagger;Reported in He et al. [26]. Best diffusion value is bolded.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 24px;">
     <thead>
       <tr>
         <th style="width: 26%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
