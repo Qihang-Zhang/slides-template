@@ -33,13 +33,31 @@ customTheme: "https://comping-style.qihang-zhang.com/stylesheets/slides.css"
 
 ---
 
-## Experimental Setting: PPL
+## Experimental Setting: 
 
-Perplexity evaluates how well the model predicts the reference tokens:
+**PPL**: Perplexity evaluates how well the model predicts the reference tokens:
 
 $$
-\mathrm{PPL} = \exp \left(\mathbb{E} - \frac{1}{N} \sum_{i=1}^{N} \log P(x_i \mid x_{<i})\right)
+\mathrm{PPL} = \exp \left(\mathbb{E} _{x \sim \mathbb{P} _{data}} - \frac{1}{N(x)} \sum _{i=1}^{N(x)} \log P(x _i \mid x _{<i})\right),
 $$
 
-Lower PPL means the model assigns higher probability to the observed sequence (better predictive quality).
+Where:
++ $N(x)$ is the number of tokens of the sequence $x$.
++ PPL is indeed the exponential of the average negative log-likelihood per token.
+
+---
+## Calculate PPL for AR and Diffusion Models
+
+- **AR Models**: We can directly compute PPL.
+- **Diffusion Models**: We approximate PPL.
+    <!-- TODO: estimate the bound of PPL-->
+
+---
+## 
+
+---
+## Table 1: Main Results on Language Modeling Benchmarks
+
+---
+
 
