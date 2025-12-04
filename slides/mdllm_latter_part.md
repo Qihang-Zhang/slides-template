@@ -267,13 +267,13 @@ Where:
 </div>
 ---
 
-## Table 4
+## Downstream NLP Tasks: GLUE Benchmark
 
 <div style="font-size: 26px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
     Table 4: GLUE evaluation results. Evaluation measures (&uarr;) are F1 score for QQP and MRPC, Spearman correlations for STS-B, and accuracy for the rest. For MNLI, we report match/mismatch accuracies.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 32px;">
     <thead>
       <tr>
         <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
@@ -314,7 +314,7 @@ Where:
         <td style="text-align: center; border-bottom: 1px solid #000;">81.62</td>
       </tr>
       <tr>
-        <td style="border-bottom: 2px solid #000;">+MDLM-FT</td>
+        <td style="border-bottom: 2px solid #000;">BERT+MDLM-FT</td>
         <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">84.76/85.07</td>
         <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">88.49</td>
         <td style="text-align: center; border-bottom: 2px solid #000;">90.30</td>
