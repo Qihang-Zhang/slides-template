@@ -273,7 +273,7 @@ Where:
   <div style="margin: 0 0 12px 0;">
     Table 4: GLUE evaluation results. Evaluation measures (&uarr;) are F1 score for QQP and MRPC, Spearman correlations for STS-B, and accuracy for the rest. For MNLI, we report match/mismatch accuracies.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 32px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 32px; margin: 0 auto;">
     <thead>
       <tr>
         <th style="width: 16%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
@@ -329,9 +329,13 @@ Where:
   </table>
 </div>
 
+**Finetune Details:**
++ Using C4 dataset (Colossal Clean Crawled Corpus)
++ 5000 steps of generative fine-tuning with MDLM objective
+
 ---
 
-## Table 5
+## Comparing with Semi-AR Models
 
 <div style="font-size: 28px; line-height: 1.35; max-width: 760px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
@@ -360,15 +364,21 @@ Where:
   </table>
 </div>
 
+**Dataset:** `OWT`
+
+**Generative Perplexity:**
+1. Sample same number of sequences from each model.
+2. Use a GPT2 trained on `OWT` to compute perplexity of the sampled sequences.
+
 ---
 
-## Table 6
+## Sequence Modelling on other Backbone: Mamba
 
 <div style="font-size: 26px; line-height: 1.35; max-width: 780px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
     Table 6: Test perplexities (PPL; &darr;) of generative fine-tuning of the Caduceus MLM [50] on the HG38 reference genome. Best diffusion model values are bolded. Error bars indicate the difference between the maximum and minimum values across 5 random seeds used for fine-tuning.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 28px;">
     <thead>
       <tr>
         <th style="width: 52%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
@@ -388,15 +398,15 @@ Where:
       </tr>
       <tr>
         <td style="font-style: italic;" rowspan="2">Diffusion (Retrained)</td>
-        <td style="text-align: center;">507K</td>
+        <td style="text-align: center;">507K(Plaid)</td>
         <td style="text-align: center;">&le; 3.240 &plusmn; .005</td>
       </tr>
       <tr>
-        <td style="text-align: center; border-bottom: 1px solid #000;">467K</td>
+        <td style="text-align: center; border-bottom: 1px solid #000;">467K(SEDD)</td>
         <td style="text-align: center; border-bottom: 1px solid #000;">&le; 3.216 &plusmn; .003</td>
       </tr>
       <tr>
-        <td style="font-style: italic; border-bottom: 2px solid #000;">Diffusion (Ours)</td>
+        <td style="font-style: italic; border-bottom: 2px solid #000;">MDLM (Ours)</td>
         <td style="text-align: center; border-bottom: 2px solid #000;">467K</td>
         <td style="text-align: center; font-weight: bold; border-bottom: 2px solid #000;">&le; 3.199 &plusmn; .010</td>
       </tr>
@@ -406,13 +416,13 @@ Where:
 
 ---
 
-## Table 7
+## DNA Sequence Modelling
 
 <div style="font-size: 26px; line-height: 1.35; max-width: 1180px; margin: 0 auto;">
   <div style="margin: 0 0 12px 0;">
     Table 7: Genomic Benchmarks. Top-1 accuracy (&uarr;) across 5-fold cross-validation (CV) for a pre-trained AR Mamba and a pre-trained Caduceus model fine-tuned with different diffusion parameterizations. The best values per task are bolded and the second best are italicized. Error bars indicate the difference between the maximum and minimum values across 5 random seeds used for CV.
   </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 20px;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 22px;">
     <thead>
       <tr>
         <th style="width: 32%; border-top: 2px solid #000; border-bottom: 1px solid #000;">Model Fine-Tuning Objective<br>(Parameter Count)</th>
@@ -492,38 +502,3 @@ Where:
   </table>
 </div>
 
----
-
-## Table 8
-
-<div style="font-size: 28px; line-height: 1.35; max-width: 620px; margin: 0 auto;">
-  <div style="margin: 0 0 12px 0;">
-    Table 8: Test perplexities (PPL; &darr;) for MDLM ablations on LM1B. For the discrete-time models, we use $T = 1000$. Standard deviation is measured over 5 seeds during evaluation.
-  </div>
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 24px;">
-    <thead>
-      <tr>
-        <th style="width: 60%; border-top: 2px solid #000; border-bottom: 1px solid #000;"></th>
-        <th style="width: 40%; text-align: center; border-top: 2px solid #000; border-bottom: 1px solid #000;">PPL (&le;)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="font-weight: bold; border-bottom: 1px solid #000;">MDLM <span style="color: #d55e00;">(47)</span></td>
-        <td style="text-align: center; font-weight: bold; border-bottom: 1px solid #000;">27.04 &plusmn; .01</td>
-      </tr>
-      <tr>
-        <td style="font-style: italic; border-bottom: 1px solid #000;">w/o continuous time <span style="color: #d55e00;">(43)</span></td>
-        <td style="text-align: center; border-bottom: 1px solid #000;">27.19 &plusmn; .07</td>
-      </tr>
-      <tr>
-        <td style="font-style: italic; border-bottom: 1px solid #000;">&amp; w/o carry-over <span style="color: #d55e00;">(41)</span></td>
-        <td style="text-align: center; border-bottom: 1px solid #000;">28.56 &plusmn; .15</td>
-      </tr>
-      <tr>
-        <td style="font-style: italic; border-bottom: 2px solid #000;">&amp; w/o zero masking <span style="color: #d55e00;">(39)</span></td>
-        <td style="text-align: center; border-bottom: 2px solid #000;">28.51 &plusmn; .15</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
