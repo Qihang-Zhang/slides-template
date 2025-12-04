@@ -308,6 +308,14 @@ $$ \mathcal{L}\_{\text{NELBO}}^\infty = \mathbb{E}\_{q} \int_{0}^{1} \frac{\alph
 
 ---
 
+## Experiments
++ Language Modelling Benchmarks
++ Downstream NLP Tasks
++ DNA Sequence Modelling
++ Downstream DNA Tasks
+
+---
+
 ## Experimental Setting: 
 
 **PPL**: Perplexity evaluates how well the model predicts the reference tokens:
@@ -327,14 +335,6 @@ Where:
 - **Diffusion Models**: 
   - We can only approximate PPL with ELBO.
   - PPL $\leq \exp(-\text{ELBO})$
-    
-
----
-
-## Experiments
-+ Language Modelling Benchmarks
-+ Downstream NLP Tasks
-+ DNA Sequence Modelling
 
 ---
 
