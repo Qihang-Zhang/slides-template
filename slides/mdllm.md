@@ -421,11 +421,13 @@ Where:
     <div style="font-size: 26px; margin: 0 0 12px 0;">Key takeaways</div>
     <ul style="margin: 0; padding-left: 18px; font-size: 24px; line-height: 1.45;">
       <li><strong>LM1B:</strong> <br> One Billion Word Benchmark for Measuring Progress in Statistical Language Modeling <br><br><strong>Origin:</strong> WMT 2011 English News Crawl<br><strong>Feature:</strong> Only short sentenses, and sentenses are shuffled.</li>
+      <li><strong>Context Window:</strong> 128 Tokens</li>
     </ul>
   </div>
 </div>
 
-**Takehome Message:** MDLM beats SEDD (previous SOTA in diffusion LM). 
+**Takehome Message:** MDLM beats SEDD (previous SOTA). 
+
 
 ---
 
@@ -464,6 +466,7 @@ Where:
     <ul style="margin: 0; padding-left: 18px;">
       <li><strong>Full name:</strong> OpenWebText Corpus</li>
       <li><strong>Description:</strong> Internal dataset used to train GPT-2.</li>
+      <li><strong>Context Window:</strong> 1024 Tokens</li>
     </ul>
   </div>
 </div>
