@@ -324,8 +324,10 @@ Where:
 ## Calculate PPL for AR and Diffusion Models
 
 - **AR Models**: We can directly compute PPL.
-- **Diffusion Models**: We approximate PPL.
-    <!-- TODO: estimate the bound of PPL-->
+- **Diffusion Models**: 
+  - We can only approximate PPL with ELBO.
+  - PPL $\leq \exp(-\text{ELBO})$
+    
 
 ---
 
