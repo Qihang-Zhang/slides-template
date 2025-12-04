@@ -273,9 +273,38 @@ $$ \mathcal{L}\_{\text{NELBO}}^\infty = \mathbb{E}\_{q} \int_{0}^{1} \frac{\alph
 
 ---
 
+## 7.  Summary of MDLM Method
+
+1.  **Forward:** Independent tokens flip to `[MASK]` over time.
+2.  **Reverse:** Predict $x_0$ directly using a Transformer (DiT/BERT).
+3.  **Parameterization (SUBS):**
+    *   Never predict mask.
+    *   Trust unmasked tokens (don't re-predict them).
+4.  **Training:**
+    *   Sample time $t$.
+    *   Mask input $x$ based on $\alpha_t$.
+    *   Minimize Cross Entropy on masked tokens weighted by $\frac{\alpha'_t}{1-\alpha_t}$.
+
+---
+
+## MDLM vs Standard MLM
+
+*   **Standard BERT (MLM):**
+    *   Mask 15% of tokens once.
+    *   Predict at masked positions.
+    
+*   **MDLM:**
+    *   Masking rate varies from 0% to 100% (controlled by $t$).
+    *   Loss is weighted.
+    *   **Generation:** Can generate text from pure noise (all masks) by iteratively unmasking.
+
+---
+
 ## Sampling / Inference Process
 
-![Sampling Process](figures/sampling.png)
+<div style="text-align: center;">
+  <img src="figures/sampling.png" alt="Sampling Process" style="max-width: 90%; height: auto; display: inline-block;">
+</div>
 
 ---
 
@@ -747,33 +776,6 @@ Where:
     </tbody>
   </table>
 </div>
-
----
-
-## 7.  Summary of MDLM Method
-
-1.  **Forward:** Independent tokens flip to `[MASK]` over time.
-2.  **Reverse:** Predict $x_0$ directly using a Transformer (DiT/BERT).
-3.  **Parameterization (SUBS):**
-    *   Never predict mask.
-    *   Trust unmasked tokens (don't re-predict them).
-4.  **Training:**
-    *   Sample time $t$.
-    *   Mask input $x$ based on $\alpha_t$.
-    *   Minimize Cross Entropy on masked tokens weighted by $\frac{\alpha'_t}{1-\alpha_t}$.
-
----
-
-## MDLM vs Standard MLM
-
-*   **Standard BERT (MLM):**
-    *   Mask 15% of tokens once.
-    *   Predict at masked positions.
-    
-*   **MDLM:**
-    *   Masking rate varies from 0% to 100% (controlled by $t$).
-    *   Loss is weighted.
-    *   **Generation:** Can generate text from pure noise (all masks) by iteratively unmasking.
 
 ---
 
